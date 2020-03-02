@@ -1,7 +1,7 @@
 <template>
   <div class="transaction-header-container transaction-table-columns">
     <div class="icon-header">
-      <span>&nbsp;</span>
+      <span>{{ $t('status') }}</span>
     </div>
     <div class="address-header">
       <span>{{ $t('from_to_action') }}</span>
