@@ -13,7 +13,13 @@
     </div>
 
     <div v-if="!transactions.length" class="no-data-container">
-      {{ $t(this.emptyMessage) }}
+      <!-- {{ $t(this.emptyMessage) }} -->
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   </div>
 </template>

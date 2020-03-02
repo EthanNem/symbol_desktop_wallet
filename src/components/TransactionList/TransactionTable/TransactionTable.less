@@ -29,12 +29,11 @@
   display: grid;
   width: 100%;
   grid-template-columns: 100%;
-  grid-template-rows: @headerHeight auto;
-  height: 100%;
+  grid-template-rows: @headerHeight 4.8rem;
   overflow: hidden;
 
   .transaction-table-columns {
-    grid-template-columns: 0.45rem auto 2rem 1.5rem 3.5rem;
+    grid-template-columns: 0.45rem auto 1.8rem 2rem 3.5rem;
   }
 
   .transaction-rows-outer-container {
@@ -42,7 +41,6 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 100%;
   }
 
   .transaction-rows-inner-container {
@@ -65,7 +63,7 @@
     margin: 0;
     padding: 0;
     cursor: pointer;
-    border-bottom: 1px solid rgba(68,0,78,0.25);
+    border-bottom: 1px solid @border;
 
     .icon-cell {
       position: relative;
@@ -84,7 +82,7 @@
     }
 
     .address-cell {
-      font-size: @normalFont;
+      font-size: @smallerFont;
       display: grid;
       width: 100%;
       height: 100%;
@@ -95,19 +93,20 @@
     }
 
     .amount-cell {
-      text-align: right;
+      text-align: left;
       padding: .13rem;
+      padding-left: 0.3rem;
     }
 
     .confirmation-cell {
-      font-size: @normalFont;
-      text-align: right;
+      font-size: @smallerFont;
+      text-align: left;
       padding: .13rem;
     }
 
     .hash-cell {
       font-size: @smallerFont;
-      text-align: right;
+      text-align: left;
       padding: 0.13rem 0.2rem 0.1rem 0.1rem;
       overflow: hidden;
       display: grid;
@@ -116,14 +115,22 @@
 
       .hash-cell-transaction-hash {
         overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }
 
   .no-data-container {
-    color: @secondary;
-    font-size: @normalFont;
-    padding-top: 0.6rem;
-    text-align: center;
+    // color: @secondary;
+    // font-size: @normalFont;
+    // padding-top: 0.6rem;
+    // text-align: center;
+    display: grid;
+    grid-auto-rows: @rowHeight;
+    grid-row-gap: @rowGap;
+    
+    >div {
+      border-bottom: 1px solid @border;
+    }
   }
 }
